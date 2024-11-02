@@ -7,10 +7,14 @@ import {
 	Delete,
 	Put,
 	Query,
+	UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { TiresService } from './tires.service';
 import { Tire } from './tire.entity';
+import { RolesGuard } from '../auth/roles.guard';
 
+@UseGuards(AuthGuard('jwt'), RolesGuard)
 @Controller('tires')
 export class TiresController {
 	constructor(private readonly tiresService: TiresService) {}

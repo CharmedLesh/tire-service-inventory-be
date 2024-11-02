@@ -3,6 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TiresModule } from './tires/tires.module';
 import { CustomPropertiesModule } from './custom-properties/custom-properties.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
 	imports: [
@@ -25,6 +27,8 @@ import { CustomPropertiesModule } from './custom-properties/custom-properties.mo
 		}),
 		TiresModule,
 		CustomPropertiesModule,
+		AuthModule,
+		UsersModule,
 	],
 	controllers: [],
 	providers: [],
